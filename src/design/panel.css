@@ -1,0 +1,46 @@
+.scroll-panel {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: visible;
+  gap: 1rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+  background: #282c34;
+  position: relative;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 220px;
+  min-height: 150px;
+  background: #abb2bf;
+  border-radius: 12px;
+  transition: transform 0.4s ease, height 0.4s ease, opacity 0.3s ease;
+  scroll-snap-align: start;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1;
+}
+
+.card.expanded {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scale(1.15);
+  z-index: 10;
+  width: 400px;
+}
+
+.card:not(.expanded) {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.more-info {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
